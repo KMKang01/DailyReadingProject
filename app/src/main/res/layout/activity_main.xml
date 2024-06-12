@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!-- 상단 타이틀 바 -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#aaeeaa"
+        android:fontFamily="@font/TmoneyRoundWindRegular"
+        android:hapticFeedbackEnabled="false"
+        android:text="나날이 봄"
+        android:textSize="42dp"
+        android:typeface="normal" />
+
+    <FrameLayout
+        android:id="@+id/containers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+    <!-- 하단 메뉴 바 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menuBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@drawable/menu_selected"
+        app:itemTextColor="@drawable/menu_selected"
+        app:menu="@menu/bottom_menu_bar" >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</LinearLayout>
