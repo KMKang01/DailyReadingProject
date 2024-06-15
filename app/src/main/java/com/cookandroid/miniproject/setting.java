@@ -22,7 +22,7 @@ public class setting extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.setting, container, false)
+        view = inflater.inflate(R.layout.setting, container, false);
         username = (EditText) view.findViewById(R.id.userName);
         useralias = (EditText) view.findViewById(R.id.userAlias);
         userage = (EditText) view.findViewById(R.id.userAge);
@@ -42,7 +42,7 @@ public class setting extends Fragment {
             }
         });
 
-        
+
 
 
         // Inflate the layout for this fragment
