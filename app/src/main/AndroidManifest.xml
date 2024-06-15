@@ -20,6 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".history"></activity>
+        <activity android:name=".home"></activity>
+        <activity android:name=".login"></activity>
+        <activity android:name=".newplan"></activity>
+        <activity android:name=".setting"></activity>
     </application>
 
 </manifest>
