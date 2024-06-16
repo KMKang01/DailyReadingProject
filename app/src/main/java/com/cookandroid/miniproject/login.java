@@ -19,27 +19,27 @@ public class login extends Fragment {
     String id, pw;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.login, container, false);
         loginBtn = (Button) view.findViewById(R.id.loginBtn);
         userID = (EditText) view.findViewById(R.id.userID);
         userPW = (EditText) view.findViewById(R.id.userPW);
 
-        id = userID.getText().toString();
-        pw = userPW.getText().toString();
-
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(id.equals("user")&&pw.equals("1234")){
-                    FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                    setting settingFragment = new setting();
-                    transaction.replace(R.id.setting, settingFragment);
-                    transaction.commit();
+                id = userID.getText().toString();
+                pw = userPW.getText().toString();
+
+                if (id.equals("user") && pw.equals("1234")) {
+                    try{
+                        ((MainActivity) getActivity()).moveToSetting();
+                    } catch (NullPointerException e ){
+                        Toast.makeText(getActivity(), "NULLPOINTER", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toast.makeText(getActivity(), "ID 혹은 PW가 틀립니다!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "ID 또는 비밀번호가 틀렸습니다!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

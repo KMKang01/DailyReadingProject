@@ -1,12 +1,28 @@
 package com.cookandroid.miniproject;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView; // 하단 목록
@@ -29,15 +45,91 @@ public class MainActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new history()).commit();
                 } else if (itemId == R.id.newPlan) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new newplan()).commit();
-                } else if (itemId == R.id.setting) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new setting()).commit();
+                } else if (itemId == R.id.login) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new login()).commit();
                 }
                 return true;
             }
         });
-
-
     }
 
+    public void moveToSetting() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, setting.newInstance()).commit();
+    }
 
+    public void createPlanFile(int n, String str){
+       try {
+           FileOutputStream outFs = openFileOutput("plan"+n+".txt", Context.MODE_PRIVATE);
+           outFs.write(str.getBytes());
+           outFs.close();
+       } catch (IOException e ) {}
+    }
+
+    public void setUserInfo(String str){
+        try{
+            FileOutputStream outFs = openFileOutput("userInfo.txt", Context.MODE_PRIVATE);
+            outFs.write(str.getBytes());
+            outFs.close();
+        } catch (IOException e){}
+    }
+
+    public String getUserInfo(){
+        try{
+            FileInputStream inFs = openFileInput("userInfo.txt");
+            StringBuilder sb = new StringBuilder();
+
+            InputStreamReader utf8 = new InputStreamReader(inFs, "UTF-8");
+            int i;
+            while ((i=utf8.read())!=-1){
+                sb.append((char)i);
+            }
+            inFs.close();
+            return sb.toString();
+        } catch (IOException e){
+            return e.toString();
+        }
+    }
+
+    public String getPlan(){
+        try{
+            File path = new File("data/data/com.cookandroid.miniproject/files");
+            ArrayList<String> fileArr = new ArrayList<>();
+            String[] list = path.list();
+            if (list != null) {
+                for (String s : list) {
+                    if (s.startsWith("plan")) {
+                        fileArr.add(s);
+                    }
+                }
+
+                if (fileArr.isEmpty()) {
+                    return "계획 파일이 없습니다.";
+                }
+
+                // 가장 마지막 계획 파일 선택
+                String lastFile = fileArr.get(fileArr.size() - 1);
+
+                FileInputStream inFs = openFileInput(lastFile);
+                StringBuilder sb = new StringBuilder();
+
+                InputStreamReader utf8 = new InputStreamReader(inFs, "UTF-8");
+                int i;
+                while((i=utf8.read())!=-1){
+                    sb.append((char)i);
+                }
+                inFs.close();
+                return sb.toString();
+            } else {
+                return "파일 목록을 가져오는 데 실패했습니다.";
+            }
+        } catch (NullPointerException e){
+            return e.toString();
+        } catch(FileNotFoundException e){
+            return e.toString();
+        } catch (IOException e) {
+            return e.toString();
+        } catch (IndexOutOfBoundsException e){
+            return  e.toString();
+        }
+    }
 }
