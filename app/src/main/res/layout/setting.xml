@@ -9,13 +9,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#BEECB8"
-        android:fontFamily="@font/font1"
-        android:paddingTop="5dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:paddingTop="10dp"
         android:text="정보 수정"
-        android:textAlignment="center"
-        android:textSize="40dp" />
-    <!-- TODO: Update blank fragment layout -->
+        android:textColor="@color/mustard"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:textAlignment="viewStart"
+        android:textSize="30dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingLeft="10dp"
+                android:padding="10dp"
                 android:translationY="60dp">
 
                 <LinearLayout
@@ -42,12 +43,14 @@
 
                     <TextView
                         android:layout_width="wrap_content"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="이름" />
 
                     <EditText
                         android:id="@+id/userName"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -61,11 +64,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:text="별명" />
 
                     <EditText
                         android:id="@+id/userAlias"
                         android:layout_width="200dp"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
 
@@ -78,10 +83,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:text="나이" />
 
                     <EditText
                         android:id="@+id/userAge"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -92,6 +99,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:fontFamily="@font/pretendard_reqular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
@@ -104,6 +112,7 @@
 
                         <RadioButton
                             android:id="@+id/male"
+                            android:fontFamily="@font/pretendard_reqular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="7dp"
@@ -112,6 +121,7 @@
 
                         <RadioButton
                             android:id="@+id/female"
+                            android:fontFamily="@font/pretendard_reqular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="7dp"
@@ -123,16 +133,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:text="나의 다짐" />
 
                     <EditText
                         android:id="@+id/myPromise"
                         android:layout_width="320dp"
+                        android:fontFamily="@font/pretendard_reqular"
                         android:layout_height="120dp"
                         android:background="@drawable/promise_border"
                         android:gravity="top"
@@ -142,9 +155,13 @@
                 </LinearLayout>
 
                 <Button
+                    android:layout_margin="20dp"
                     android:id="@+id/editBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:background="@color/mustard"
+                    android:shadowColor="#c0c0c0"
                     android:layout_gravity="center|bottom"
                     android:text="수정" />
             </LinearLayout>

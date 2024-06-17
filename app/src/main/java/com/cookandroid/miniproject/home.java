@@ -29,7 +29,7 @@ public class home extends Fragment {
             String str = ((MainActivity) getActivity()).getUserInfo();
             String name = str.split("\n")[0];
             name = name.substring(4);
-            tv1.setText("어서오세요, "+name+"님!");
+            tv1.setText("어서오세요,\n"+name+"님!");
         }catch(NullPointerException e ){
             Toast.makeText(getActivity(), "NULLPOINTER", Toast.LENGTH_SHORT).show();
             tv1.setText("어서오세요!");

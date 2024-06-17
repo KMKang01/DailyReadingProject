@@ -25,7 +25,8 @@
 
 
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
+            android:padding="10dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
@@ -52,7 +53,9 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
-                android:background="#98D698"
+                android:fontFamily="@font/pretendard_reqular"
+                android:background="@color/mustard"
+                android:shadowColor="#ebebeb"
                 android:text="로그인"
                 />
         </LinearLayout>

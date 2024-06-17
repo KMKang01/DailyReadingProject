@@ -8,16 +8,6 @@
     tools:context=".MainActivity">
     <!-- 상단 타이틀 바 -->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#aaeeaa"
-        android:fontFamily="@font/font1"
-        android:hapticFeedbackEnabled="false"
-        android:text="나날이 봄"
-        android:textSize="42dp"
-        android:typeface="normal" />
-
     <FrameLayout
         android:id="@+id/main_frame"
         android:layout_width="match_parent"

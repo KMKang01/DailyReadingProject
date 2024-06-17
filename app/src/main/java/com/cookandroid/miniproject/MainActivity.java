@@ -132,4 +132,50 @@ public class MainActivity extends AppCompatActivity {
             return  e.toString();
         }
     }
+    public Object[] getPlans(){
+        try{
+            File path = new File("data/data/com.cookandroid.miniproject/files");
+            ArrayList<String> fileArr = new ArrayList<>(); //파일 이름 배열
+            String[] list = path.list();
+            ArrayList<String> fileContent = new ArrayList<>();
+            if (list != null) {
+                for (String s : list) {
+                    if (s.startsWith("plan")) {
+                        fileArr.add(s);
+                    }
+                }
+
+                if (fileArr.isEmpty()) {
+                    return null;
+                }
+
+                // 파일을 하나하나씩 읽어와서 fileContent 배열에 저장
+                for(int i = 0; i<fileArr.size(); i++){
+                    String file = fileArr.get(i);
+                    FileInputStream inFs = openFileInput(file);
+                    StringBuilder sb = new StringBuilder();
+                    InputStreamReader utf8 = new InputStreamReader(inFs, "UTF-8");
+
+                    int j;
+                    while((j=utf8.read())!=-1){
+                        sb.append((char)j);
+                    }
+                    inFs.close();
+                    fileContent.add(sb.toString());
+                }
+
+                return fileContent.toArray(); // Object 형태로 history에 전달
+            } else {
+                return null;
+            }
+        } catch (NullPointerException e){
+            return null;
+        } catch(FileNotFoundException e){
+            return null;
+        } catch (IOException e) {
+            return null;
+        } catch (IndexOutOfBoundsException e){
+            return null;
+        }
+    }
 }

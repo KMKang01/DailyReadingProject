@@ -8,104 +8,129 @@
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:translationY="56dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/font1"
-            android:text="책 읽을 준비📕"
-            android:textSize="30dp" />
+            android:background="@color/mustard"
+            android:fontFamily="@font/pretendard_bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="책 읽을 준비 📖"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:translationY="30dp"
+            android:padding="10dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/font1"
-                android:text="책 제목: "
-                android:textSize="18dp" />
+                android:translationY="-10dp"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/bookName"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:text="책 제목: "
+                    android:textSize="18dp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/bookName"
+                    android:layout_width="150dp"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/font1"
-                android:text="글쓴이: "
-                android:textSize="18dp" />
+                android:translationY="-10dp"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/author"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:text="글쓴이: "
+                    android:textSize="18dp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/author"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/font1"
-                android:text="페이지 수: "
-                android:textSize="18dp" />
+                android:translationY="-10dp"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/pages"
-                android:inputType="number"
-                android:layout_width="60dp"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:text="페이지 수: "
+                    android:textSize="18dp" />
 
-        </LinearLayout>
+                <EditText
+                    android:id="@+id/pages"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:inputType="number" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            </LinearLayout>
 
-            <TextView
+            <LinearLayout
+                android:paddingTop="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/font1"
-                android:text="이 책을 읽게 된 계기는?"
-                android:textSize="18dp" />
+                android:orientation="vertical">
 
-            <EditText
-                android:gravity="top"
-                android:id="@+id/motivation"
-                android:layout_width="380dp"
-                android:layout_height="150dp"
-                android:hint="간단하게 적어봐요!"
-                android:background="@drawable/promise_border"
-                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:text="이 책을 읽게 된 계기는?"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
 
+                <EditText
+                    android:id="@+id/motivation"
+                    android:layout_width="390dp"
+                    android:layout_height="150dp"
+                    android:fontFamily="@font/pretendard_reqular"
+                    android:padding="5dp"
+                    android:background="@drawable/promise_border"
+                    android:gravity="top"
+                    android:hint="간단하게 적어봐요!" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_margin="70dp"
+                android:id="@+id/createPlan"
+                android:fontFamily="@font/pretendard_reqular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/mustard"
+                android:shadowColor="#c0c0c0"
+                android:text="읽기 시작!" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/createPlan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="읽기 시작!" />
     </LinearLayout>
+
 
 </FrameLayout>
