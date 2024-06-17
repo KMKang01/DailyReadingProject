@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -28,9 +33,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="7091c2" />
-                            <entry key="opacityPercent" value="89" />
-                            <entry key="outputName" value="bookinfo" />
+                            <entry key="outputName" value="appicon" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/app/src/main/res/drawable/appicon.svg" />
                           </map>
                         </option>
                       </PersistentState>

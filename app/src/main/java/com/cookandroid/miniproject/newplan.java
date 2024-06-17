@@ -16,11 +16,10 @@ import androidx.fragment.app.Fragment;
 import org.json.JSONObject;
 
 public class newplan extends Fragment {
-    static int file_count = 0;
     StringBuilder sb = new StringBuilder();
-    EditText edt1, edt2, edt3, edt4;
+    EditText edt1, edt2, edt3, edt4, edt5, edt6;
     Button btn1;
-    String bookName, author, motivation, pagesStr;
+    String bookName, author, startDate, finishDate, motivation, pagesStr;
     int pages;
 
     @Override
@@ -30,7 +29,9 @@ public class newplan extends Fragment {
         edt1 = view.findViewById(R.id.bookName);
         edt2 = view.findViewById(R.id.pages);
         edt3 = view.findViewById(R.id.author);
-        edt4 = view.findViewById(R.id.motivation);
+        edt4 = view.findViewById(R.id.startDate);
+        edt5 = view.findViewById(R.id.finishDate);
+        edt6 = view.findViewById(R.id.motivation);
         btn1 = view.findViewById(R.id.createPlan);
 
 
@@ -40,9 +41,11 @@ public class newplan extends Fragment {
                 bookName = edt1.getText().toString().trim();
                 pagesStr = edt2.getText().toString().trim();
                 author = edt3.getText().toString().trim();
-                motivation = edt4.getText().toString().trim();
+                startDate = edt4.getText().toString().trim();
+                finishDate = edt5.getText().toString().trim();
+                motivation = edt6.getText().toString().trim();
 
-                if (bookName.isEmpty() || pagesStr.isEmpty() || author.isEmpty() || motivation.isEmpty()) {
+                if (bookName.isEmpty() || pagesStr.isEmpty() || author.isEmpty() || startDate.isEmpty() || finishDate.isEmpty() || motivation.isEmpty()) {
                     Toast.makeText(getActivity(), "모든 필드를 입력해주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -57,13 +60,19 @@ public class newplan extends Fragment {
                 sb.append("책 제목: ").append(bookName).append("\n")
                         .append("페이지 수: ").append(pages).append("\n")
                         .append("저자: ").append(author).append("\n")
+                        .append("독서 시작일: ").append(startDate).append("\n")
+                        .append("완독 예정일: ").append(finishDate).append("\n")
                         .append("동기: ").append(motivation);
 
-                try{
+                try {
+                    int file_count;
+                    String lastPlan = ((MainActivity) getActivity()).getLastPlan();
+                    String[] arr = lastPlan.split(".txt");
+                    file_count = Integer.parseInt(arr[0].substring(4)) + 1;
+
                     ((MainActivity) getActivity()).createPlanFile(file_count, sb.toString());
-                    file_count++;
                     Toast.makeText(getActivity(), "계획 생성 완료!", Toast.LENGTH_SHORT).show();
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     Toast.makeText(getActivity(), "NULLPOINTER", Toast.LENGTH_SHORT).show();
                 }
             }

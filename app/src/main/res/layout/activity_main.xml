@@ -24,6 +24,4 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu_bar" />
 
-
-
 </RelativeLayout>

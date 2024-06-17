@@ -15,7 +15,6 @@ public class history extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.history, container, false);
 
-
         Object[] fileArr = ((MainActivity)getActivity()).getPlans();
         String[] menuItems = new String[fileArr.length];
 
@@ -25,6 +24,7 @@ public class history extends Fragment {
 
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, menuItems);
 
+        listView.setAdapter(listViewAdapter);
 
         return view;
     }

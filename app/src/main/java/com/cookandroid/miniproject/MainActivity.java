@@ -90,6 +90,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public String getLastPlan(){
+        try {
+            File path = new File("data/data/com.cookandroid.miniproject/files");
+            String[] list = path.list();
+            return list[list.length -1];
+        } catch (NullPointerException e ){
+            return e.toString();
+        }
+    }
+
+
     public String getPlan(){
         try{
             File path = new File("data/data/com.cookandroid.miniproject/files");
