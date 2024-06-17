@@ -30,4 +30,30 @@
 		- 정보를 수정하려면 Login 화면을 통해 접근
 		- 수정된 정보에서 이름은 홈 화면에 출력되는 환영 문구에 업데이트됨
 ##### 2.2 프로젝트 구조
-<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/317dc026-c90a-42bd-853d-fcc5b1be4d2a">
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/317dc026-c90a-42bd-853d-fcc5b1be4d2a" >
+
+##### 2.3 프로젝트 실행 화면
+- 메인화면
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/565c32ec-833a-45e9-b3be-6881ce16aa8d" width="270" height="480">
+
+- 이전기록 화면
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/884e4295-b142-4cf9-9ff2-c37b9cf9a905" width="270" height="480">
+
+- 새 계획화면
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/23b7c37e-aefd-43c2-86bc-5ec885591901" width="270" height="480">
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/8dd68555-cd9b-478c-b581-cfe111b2f45b" width="270" height="480">
+<br>
+계획 생성 후 메인 화면<br>
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/035bb336-9550-4552-a43f-3e78a1ae4a61" width="270" height="480">
+<br>계획 생성 후 이전기록 화면<br>
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/b540d94a-52a8-465d-979a-369b9e29ebd4" width="270" height="480">
+
+- 로그인화면
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/c1d3ff8f-2bde-4ab8-91bb-7417db6be806" width="270" height="480">
+
+- 정보수정화면
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/62538e6e-ae77-4ee3-8aef-59565aa691db" width="270" height="480">
+<br>정보 수정 후 메인 화면<br>
+<img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/27ad6e1d-e1b3-4853-9851-45f6d6f2bb5f" width="270" height="480">
+
+##### 2.4 발표영상
