@@ -57,3 +57,4 @@
 <img src="https://github.com/KMKang01/DailyReadingProject/assets/144207120/27ad6e1d-e1b3-4853-9851-45f6d6f2bb5f" width="270" height="480">
 
 ##### 2.4 발표영상
+https://youtu.be/YM_D7wJvfBI
